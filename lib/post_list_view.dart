@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'models/post_list_model.dart';
-
+// import 'package:image_whisperer/image_whisperer.dart';
+// import 'package:flutter/painting.dart'; 
 class PostListPage extends StatelessWidget {
   //Enter Your API key
   final String apiKey = 'AIzaSyCRPASFE9uxloU_VOOoYtKSTRaElsEodS4';
@@ -30,7 +31,6 @@ class PostListPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: FutureBuilder(
-          // : null,
           future: fetchPosts(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -43,6 +43,8 @@ class PostListPage extends StatelessWidget {
                 itemCount: snapshot.data.posts.length ?? 1,
                 itemBuilder: (context, index) {
                   return Card(
+                    semanticContainer: true,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: ListTile(
                       title: Text(
                         snapshot.data.posts[index].title ?? "no items",
@@ -51,6 +53,23 @@ class PostListPage extends StatelessWidget {
                           snapshot.data.posts[index].author.displayName ??
                               "No Auther"),
                     ),
+                    // child: Column(
+                    //   children: [
+                    //     Container(
+                    //       height: 100,
+                    //       width: 50,
+                    //       decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //      image: NetworkImage(
+                    //      snapshot.data.posts[index].url
+                    //      ),
+                    //       fit: BoxFit.fill,
+                    //       ),
+                    //        shape: BoxShape.circle,
+                    //     ),
+                    //     )
+                    //   ],
+                    // ),
                   );
                 },
               );
