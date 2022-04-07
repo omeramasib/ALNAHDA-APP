@@ -6,9 +6,9 @@ import 'models/post_list_model.dart';
 
 class PostListPage extends StatelessWidget {
   //Enter Your API key
-  final String apiKey = 'Enter Your API key here';
+  final String apiKey = 'AIzaSyCRPASFE9uxloU_VOOoYtKSTRaElsEodS4';
   //Enter your Blog Id here
-  final String blogId = 'Enter your Blog Id here';
+  final String blogId = '7826611722270527969';
 
   //Function for Fetching Posts
   Future<PostList> fetchPosts() async {
@@ -26,7 +26,7 @@ class PostListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Post List"),
+        title: Text("Alnahda app"),
         centerTitle: true,
       ),
       body: FutureBuilder(
