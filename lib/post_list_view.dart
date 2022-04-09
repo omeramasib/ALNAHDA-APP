@@ -29,6 +29,7 @@ class PostListPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Alnahda app"),
         centerTitle: true,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: FutureBuilder(
           future: fetchPosts(),

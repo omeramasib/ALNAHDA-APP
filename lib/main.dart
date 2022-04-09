@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'ALNAHDA APP',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xff2d2f7a),
       ),
       home: PostListPage(),
     );
