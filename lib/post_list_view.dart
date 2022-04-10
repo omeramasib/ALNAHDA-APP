@@ -5,9 +5,15 @@ import 'package:http/http.dart' as http;
 import 'models/post_list_model.dart';
 // import 'package:image_whisperer/image_whisperer.dart';
 // import 'package:flutter/painting.dart'; 
-class PostListPage extends StatelessWidget {
+class PostListPage extends StatefulWidget {
+  @override
+  State<PostListPage> createState() => _PostListPageState();
+}
+
+class _PostListPageState extends State<PostListPage> {
   //Enter Your API key
   final String apiKey = 'AIzaSyCRPASFE9uxloU_VOOoYtKSTRaElsEodS4';
+
   //Enter your Blog Id here
   final String blogId = '7826611722270527969';
 
@@ -54,23 +60,7 @@ class PostListPage extends StatelessWidget {
                           snapshot.data.posts[index].author.displayName ??
                               "No Auther"),
                     ),
-                    // child: Column(
-                    //   children: [
-                    //     Container(
-                    //       height: 100,
-                    //       width: 50,
-                    //       decoration: BoxDecoration(
-                    //       image: DecorationImage(
-                    //      image: NetworkImage(
-                    //      snapshot.data.posts[index].url
-                    //      ),
-                    //       fit: BoxFit.fill,
-                    //       ),
-                    //        shape: BoxShape.circle,
-                    //     ),
-                    //     )
-                    //   ],
-                    // ),
+                 
                   );
                 },
               );

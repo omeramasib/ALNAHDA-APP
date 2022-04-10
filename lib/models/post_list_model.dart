@@ -1,6 +1,6 @@
 class PostList {
-  String kind;
-  List<Post> posts;
+  String? kind;
+  List<Post>? posts;
 
   PostList({
     this.kind,
@@ -12,25 +12,25 @@ class PostList {
     if (json['items'] != null) {
       posts = <Post>[];
       json['items'].forEach((v) {
-        posts.add(new Post.fromJson(v));
+        posts!.add(new Post.fromJson(v));
       });
     }
   }
 }
 
 class Post {
-  String kind;
-  String id;
-  Blog blog;
-  String published;
-  String updated;
-  String url;
-  String selfLink;
-  String title;
-  String content;
-  Author author;
-  Replies replies;
-  String etag;
+  String? kind;
+  String? id;
+  Blog? blog;
+  String? published;
+  String? updated;
+  String? url;
+  String? selfLink;
+  String? title;
+  String? content;
+  Author? author;
+  Replies? replies;
+  String? etag;
   // List<String> labels;
 
   Post({
@@ -69,9 +69,9 @@ class Post {
 }
 
 class Blog {
-  String id;
+  String? id;
 
-  Blog({this.id});
+  Blog({required this.id});
 
   Blog.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -79,12 +79,12 @@ class Blog {
 }
 
 class Author {
-  String id;
-  String displayName;
-  String url;
-  Image image;
+  String? id;
+  String? displayName;
+  String? url;
+  Image? image;
 
-  Author({this.id, this.displayName, this.url, this.image});
+  Author({required this.id, required this.displayName, required this.url, required this.image});
 
   Author.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -95,7 +95,7 @@ class Author {
 }
 
 class Image {
-  String url;
+  String? url;
 
   Image({this.url});
 
@@ -105,8 +105,8 @@ class Image {
 }
 
 class Replies {
-  String totalItems;
-  String selfLink;
+  String? totalItems;
+  String? selfLink;
 
   Replies({this.totalItems, this.selfLink});
 
