@@ -38,9 +38,3 @@ class AboutUsScreen extends StatelessWidget {
     );
   }
 }
-// Text(
-//                 "عن النهضة للإسكان",
-//                 style: GoogleFonts.cairo(
-//                   fontSize: 20,
-//                 ),
-//               )
