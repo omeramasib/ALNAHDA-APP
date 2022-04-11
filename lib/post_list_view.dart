@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:blogger_json_example/utils/widgets/menue.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'models/post_list_model.dart';
 // import 'package:image_whisperer/image_whisperer.dart';
@@ -23,7 +25,8 @@ class _PostListPageState extends State<PostListPage> {
         "blogger.googleapis.com", "/v3/blogs/$blogId/posts/", {"key": apiKey});
     final response = await http.get(postListUrl);
     if (response.statusCode == 200) {
-      return PostList.fromJson(jsonDecode(response.body));
+      var data = jsonDecode(response.body.toString());
+      return PostList.fromJson(data);
     } else {
       throw Exception();
     }
@@ -33,11 +36,16 @@ class _PostListPageState extends State<PostListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Alnahda app"),
+        title: Text("شركة النهضة الإسكانية العقارية",
+        style: GoogleFonts.cairo(
+          textStyle: TextStyle(letterSpacing: .5),
+        ),
+        ),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: FutureBuilder(
+      drawer: Menue(),
+      body: FutureBuilder<PostList>(
           future: fetchPosts(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -47,18 +55,23 @@ class _PostListPageState extends State<PostListPage> {
             } else
               return ListView.builder(
                 shrinkWrap: true,
-                itemCount: snapshot.data.posts.length ?? 1,
+                itemCount: snapshot.data!.items!.length,
                 itemBuilder: (context, index) {
                   return Card(
                     semanticContainer: true,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: ListTile(
                       title: Text(
-                        snapshot.data.posts[index].title ?? "no items",
+                        snapshot.data!.items![index].title ?? "لاتوجد عناوين",
+                        style: GoogleFonts.cairo(
+                        ),
                       ),
                       subtitle: Text(
-                          snapshot.data.posts[index].author.displayName ??
-                              "No Auther"),
+                          snapshot.data!.items![index].author!.displayName ??
+                              "لاتوجد بينات",
+                              style: GoogleFonts.cairo(
+                        ),
+                              ),
                     ),
                  
                   );
