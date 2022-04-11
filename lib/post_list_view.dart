@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:blogger_json_example/utils/widgets/body.dart';
 import 'package:blogger_json_example/utils/widgets/menue.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,23 +15,7 @@ class PostListPage extends StatefulWidget {
 
 class _PostListPageState extends State<PostListPage> {
   //Enter Your API key
-  final String apiKey = 'AIzaSyCRPASFE9uxloU_VOOoYtKSTRaElsEodS4';
-
-  //Enter your Blog Id here
-  final String blogId = '7826611722270527969';
-
-  //Function for Fetching Posts
-  Future<PostList> fetchPosts() async {
-    var postListUrl = Uri.https(
-        "blogger.googleapis.com", "/v3/blogs/$blogId/posts/", {"key": apiKey});
-    final response = await http.get(postListUrl);
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body.toString());
-      return PostList.fromJson(data);
-    } else {
-      throw Exception();
-    }
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -38,46 +23,17 @@ class _PostListPageState extends State<PostListPage> {
       appBar: AppBar(
         title: Text("شركة النهضة الإسكانية العقارية",
         style: GoogleFonts.cairo(
-          textStyle: TextStyle(letterSpacing: .5),
+          textStyle: TextStyle(
+            letterSpacing: .5,
+            fontWeight: FontWeight.bold
+            ),
         ),
         ),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
       ),
       drawer: Menue(),
-      body: FutureBuilder<PostList>(
-          future: fetchPosts(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            } else
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: snapshot.data!.items!.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: ListTile(
-                      title: Text(
-                        snapshot.data!.items![index].title ?? "لاتوجد عناوين",
-                        style: GoogleFonts.cairo(
-                        ),
-                      ),
-                      subtitle: Text(
-                          snapshot.data!.items![index].author!.displayName ??
-                              "لاتوجد بينات",
-                              style: GoogleFonts.cairo(
-                        ),
-                              ),
-                    ),
-                 
-                  );
-                },
-              );
-          }),
+      body: Body(),
     );
   }
 }
