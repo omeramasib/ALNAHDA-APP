@@ -12,11 +12,7 @@ class PostListPage extends StatefulWidget {
   @override
   State<PostListPage> createState() => _PostListPageState();
 }
-
 class _PostListPageState extends State<PostListPage> {
-  //Enter Your API key
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
