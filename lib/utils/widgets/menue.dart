@@ -1,9 +1,10 @@
+import 'package:blogger_json_example/utils/widgets/employment_applications.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../screens/about_us_screen.dart';
+
 class Menue extends StatefulWidget {
-  const Menue({ Key? key }) : super(key: key);
+  const Menue({Key? key}) : super(key: key);
 
   @override
   State<Menue> createState() => _MenueState();
@@ -18,126 +19,74 @@ class _MenueState extends State<Menue> {
         child: ListView(
           children: [
             ListTile(
-          title:  Text(
-            'عن النهضة؟',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
+              title: Text(
+                'عن النهضة؟',
+                textAlign: TextAlign.end,
+                style: GoogleFonts.cairo(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AboutUsScreen()),
+                );
+              },
             ),
+            Divider(
+              color: Colors.grey[600],
+              height: 10,
             ),
-          onTap: () {
-            Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const AboutUsScreen()),
-  );
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'سياسة الخصوصية',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
+            ListTile(
+              title: Text(
+                'طلبات التوظيف',
+                textAlign: TextAlign.end,
+                style: GoogleFonts.cairo(color: Colors.white),
+              ),
+              onTap: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EmploymentApplications()),
+                );
+              },
             ),
+            Divider(
+              color: Colors.grey[600],
+              height: 10,
             ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'إتفاقية الإستخدام',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
+            ListTile(
+              title: Text(
+                'طلبات العقار',
+                textAlign: TextAlign.end,
+                style: GoogleFonts.cairo(color: Colors.white),
+              ),
+              onTap: () {},
             ),
+            Divider(
+              color: Colors.grey[600],
+              height: 10,
             ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'طلبات التوظيف',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
+            ListTile(
+              title: Text(
+                'حسبة البنك',
+                textAlign: TextAlign.end,
+                style: GoogleFonts.cairo(color: Colors.white),
+              ),
+              onTap: () {},
             ),
+            Divider(
+              color: Colors.grey[600],
+              height: 10,
             ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'طلبات العقار',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
+            ListTile(
+              title: Text(
+                'تواصل معنا',
+                textAlign: TextAlign.end,
+                style: GoogleFonts.cairo(color: Colors.white),
+              ),
+              onTap: () {},
             ),
-            ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'حسبة البنك',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
-            ),
-            ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'الفهرس',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
-            ),
-            ),
-          onTap: () {
-          },
-        ),
-        Divider(
-        color: Colors.grey[600],
-        height: 10,
-        ),
-        ListTile(
-          title:  Text(
-            'تواصل معنا',
-            textAlign: TextAlign.end,
-            style: GoogleFonts.cairo(
-              color: Colors.white
-            ),
-            ),
-          onTap: () {
-          },
-        ),
-            ],
+          ],
         ),
       ),
     );

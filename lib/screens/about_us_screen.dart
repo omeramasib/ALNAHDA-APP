@@ -73,14 +73,10 @@ class AboutUsScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: Row(
-                    children: [
-                      Text(
-                        "حلول الدفعة العقارية للراغبيين شراء العقارات عن طريق البنوك او الكاش < ",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.cairo(),
-                      ),
-                    ],
+                  child: Text(
+                    " حلول الدفعة العقارية للراغبيين شراء العقارات عن طريق البنوك او الكاش ",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.cairo(),
                   ),
                 ),
                 Padding(
@@ -111,15 +107,10 @@ class AboutUsScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "المتابعة والتحصيل والتأجير وتوفير الضمانات للمالك في إدارة الأملاك < ",
-                        textAlign: TextAlign.end,
-                        style: GoogleFonts.cairo(),
-                      ),
-                    ],
+                  child: Text(
+                    "المتابعة والتحصيل والتأجير وتوفير الضمانات للمالك في إدارة الأملاك",
+                    textAlign: TextAlign.end,
+                    style: GoogleFonts.cairo(),
                   ),
                 ),
                 Padding(
@@ -294,26 +285,30 @@ class AboutUsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      ".(فرع أبها المحالة خلف اسواق الجداف)",
-                      textAlign: TextAlign.end,
-                      style: GoogleFonts.cairo(),
+                    Expanded(
+                      child: Text(
+                        ".(فرع أبها المحالة خلف اسواق الجداف)",
+                        textAlign: TextAlign.end,
+                        style: GoogleFonts.cairo(),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 2),
-                      child: Text(
-                        ":فرع أبها البديع < ",
-                        textAlign: TextAlign.end,
-                        style: GoogleFonts.cairo(
-                          color: Theme.of(context).primaryColor,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
+                      child: Expanded(
+                        child: Text(
+                          ":فرع أبها البديع < ",
+                          textAlign: TextAlign.end,
+                          style: GoogleFonts.cairo(
+                            color: Theme.of(context).primaryColor,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
@@ -335,7 +330,7 @@ class AboutUsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
@@ -360,20 +355,24 @@ class AboutUsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      ".(شارع الأربعين - الامير متعب , الدور الرابع شقة 14)",
-                      textAlign: TextAlign.end,
-                      style: GoogleFonts.cairo(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 2),
+                    Flexible(
                       child: Text(
-                        ":فرع جدة < ",
+                        ".(شارع الأربعين - الامير متعب , الدور الرابع شقة 14)",
                         textAlign: TextAlign.end,
-                        style: GoogleFonts.cairo(
-                          color: Theme.of(context).primaryColor,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
+                        style: GoogleFonts.cairo(),
+                      ),
+                    ),
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 2),
+                        child: Text(
+                          ":فرع جدة < ",
+                          textAlign: TextAlign.end,
+                          style: GoogleFonts.cairo(
+                            color: Theme.of(context).primaryColor,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
