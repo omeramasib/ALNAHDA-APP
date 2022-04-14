@@ -33,6 +33,7 @@ dependencies:
   shimmer: ^2.0.0
   dropdown_button2: ^1.4.0
   intl: ^0.17.0
+  group_radio_button: ^1.2.0
 
 flutter_native_splash:
 
