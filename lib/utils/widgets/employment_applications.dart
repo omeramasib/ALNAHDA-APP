@@ -226,7 +226,7 @@ class _EmploymentApplicationsState extends State<EmploymentApplications> {
                             hint: Text(
                               "${genderItems.first.toString()}",
                               style: TextStyle(
-                                color: Colors.white,
+                                // color: Colors.white,
                                 fontSize: 16
                                   ),
                             ),
@@ -425,7 +425,7 @@ class _EmploymentApplicationsState extends State<EmploymentApplications> {
                           hintText: "+966",
                           contentPadding: EdgeInsets.all(5),
                           hintStyle: GoogleFonts.cairo(
-                            color:Colors.white
+                            // color:Colors.white
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
