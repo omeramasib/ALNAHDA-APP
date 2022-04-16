@@ -22,7 +22,7 @@ class JobList {
 class RadioGroupWidget extends State {
  
   // Default Radio Button Item
-  String radioItem = 'Mango';
+  String radioItem = 'مبتدئ';
  
   // Group Value for Radio Button.
   int id = 1;
@@ -49,10 +49,10 @@ class RadioGroupWidget extends State {
   Widget build(BuildContext context) {
     return Column(
         children: <Widget>[
-           Padding(
-            padding : EdgeInsets.all(14.0),
-            child: Text('$radioItem', style: TextStyle(fontSize: 23))
-              ),
+          //  Padding(
+          //   padding : EdgeInsets.all(14.0),
+          //   child: Text('$radioItem', style: TextStyle(fontSize: 23))
+          //     ),
  
            Expanded(
             child: Container(
@@ -60,6 +60,8 @@ class RadioGroupWidget extends State {
             child: Column(
               children: 
                 jList.map((data) => RadioListTile(
+                  activeColor:  Colors.deepPurple[100],
+                  // selectedTileColor: Colors.deepPurple[100],
                   title: Text("${data.name}"),
                   groupValue: id,
                   value: data.index,
