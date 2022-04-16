@@ -304,7 +304,7 @@ class _RealstateRequestsState extends State<RealstateRequests> {
                         color: Colors.deepPurple[50],
                         borderRadius: BorderRadius.circular(3)),
                     child: TextFormField(
-                      keyboardType: TextInputType.text,
+                      keyboardType: TextInputType.number,
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.black54),
                       decoration: InputDecoration(
