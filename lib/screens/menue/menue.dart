@@ -1,8 +1,8 @@
-import 'package:blogger_json_example/screens/employment_applications.dart';
+import 'package:blogger_json_example/screens/menue/employment_applications.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../screens/about_us_screen.dart';
-import '../../screens/real_estate_requests.dart';
+import 'about_us_screen.dart';
+import 'real_estate_requests.dart';
 
 class Menue extends StatefulWidget {
   const Menue({Key? key}) : super(key: key);
