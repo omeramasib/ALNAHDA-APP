@@ -5,7 +5,7 @@ import 'package:blogger_json_example/utils/widgets/menue.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'models/post_list_model.dart';
+import '../models/post_list_model.dart';
 // import 'package:image_whisperer/image_whisperer.dart';
 // import 'package:flutter/painting.dart'; 
 class PostListPage extends StatefulWidget {

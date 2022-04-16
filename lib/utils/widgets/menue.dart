@@ -1,7 +1,8 @@
-import 'package:blogger_json_example/utils/widgets/employment_applications.dart';
+import 'package:blogger_json_example/screens/employment_applications.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../screens/about_us_screen.dart';
+import '../../screens/real_estate_requests.dart';
 
 class Menue extends StatefulWidget {
   const Menue({Key? key}) : super(key: key);
@@ -60,7 +61,13 @@ class _MenueState extends State<Menue> {
                 textAlign: TextAlign.end,
                 style: GoogleFonts.cairo(color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RealstateRequests()),
+                );
+              },
             ),
             Divider(
               color: Colors.grey[600],
